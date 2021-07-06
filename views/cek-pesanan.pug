@@ -30,11 +30,12 @@ html
         div.banner
             h1.bannerText Cek Status Pesanan
         div.mainForm
+           input(type = "text", id= "search" onkeyup="var input, filter, table, tr, td, i, j, txtValue;input = document.getElementById('search');filter = input.value.toUpperCase();table = document.getElementById('mytable');tr = table.getElementsByTagName('tr');for (i = 0; i < tr.length; i++) {td = tr[i].getElementsByTagName('td')[0];if (td) {txtValue = td.textContent || td.innerText; for(j = 0; j < tr[i].getElementsByTagName('td').length; j++) { td = tr[i].getElementsByTagName('td')[j]; txtValue = txtValue.concat(td.textContent || td.innerText);} if (txtValue.toUpperCase().indexOf(filter) > -1) {tr[i].style.display = '';} else {tr[i].style.display = 'none';}}}" placeholder="Cari kata kunci..")
            .container
              .event-registration.reset
                .content.wide
                  .row-inset
-                   table.table-default.table-striped.table-bordered.sortable
+                   table(id = "mytable").table-default.table-striped.table-bordered.sortable
                      thead(data-header="true")
                        tr
                          th(data-sort-column="true") Penerima
