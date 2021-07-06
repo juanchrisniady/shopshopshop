@@ -118,7 +118,7 @@ app.post('/submit', [
 			return;
 		}
 		var n_price = rowsToInsert["price"];
-		if((isNaN(n_price) && n_price != "default") || parseInt(n_price, 10) < 180000 || parseInt(n_price, 10) > 54000){
+		if((isNaN(n_price) && n_price != "default") || parseInt(n_price, 10) < 180000 || parseInt(n_price, 10) > 540000){
 			res.render('main-form', {msg: 'Harga minimal seharga 180000, maksimal 3x modal', Addresses: ret});
 			return;
 		}
