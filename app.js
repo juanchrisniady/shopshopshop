@@ -134,7 +134,7 @@ app.post('/submit', [
 		var currOrderNum = ORDER_ID_CURR + ORDER_ID_LOW;
 		var currOrderId = ORDER_ID_NAME + currOrderNum;
 		in_jawa = false;
-		arr.forEach(j => {
+		jawa.forEach(j => {
 		  if(rowsToInsert["address_id"].includes(j)){
 			  in_jawa = true;
 		  }
