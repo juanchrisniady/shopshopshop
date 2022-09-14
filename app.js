@@ -157,6 +157,7 @@ app.post('/submit', [
 			request(options, function (error, response, body) {
 			  if (error) throw new Error(error);
 				var cost = JSON.parse(body).rajaongkir.results[0].costs[0].cost[0].value;
+				cost = cost+500;
 				rowsToInsert['cost'] = cost;
 				if(n_price == "default") {
 					price = seller_price[seller_id.toUpperCase()];
