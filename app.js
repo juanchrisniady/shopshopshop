@@ -17,7 +17,7 @@ const valid_seller    = (process.env.VALID_SELLER).split(", ");
 const seller_price    = JSON.parse(process.env.SELLER_PRICE);
 const ongkirapi = process.env.ONGKIR;
 const SUBS_PATH = 'subdistrict.json'
-
+const jawa = ["JAWA", "BANTEN", "JAKARTA", "YOGYAKARTA"];
 
 const ORDER_ID_NAME = "TEKNIA";
 const ORDER_ID_LOW = 1020;
