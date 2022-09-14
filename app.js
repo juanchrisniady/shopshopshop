@@ -135,7 +135,7 @@ app.post('/submit', [
 		var currOrderId = ORDER_ID_NAME + currOrderNum;
 		in_jawa = false;
 		jawa.forEach(j => {
-		  if(rowsToInsert["address_id"].includes(j)){
+		  if(rowsToInsert["address_id"].toUpperCase().includes(j)){
 			  in_jawa = true;
 		  }
 		});
