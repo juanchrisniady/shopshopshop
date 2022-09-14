@@ -133,6 +133,13 @@ app.post('/submit', [
 		ORDER_ID_CURR++;
 		var currOrderNum = ORDER_ID_CURR + ORDER_ID_LOW;
 		var currOrderId = ORDER_ID_NAME + currOrderNum;
+		in_jawa = false;
+		arr.forEach(j => {
+		  if(rowsToInsert["address_id"].includes(j)){
+			  in_jawa = true;
+		  }
+		});
+	
 		if (!errors.isEmpty()) { 
 			const alert = errors.array();
 			res.render('main-form', {msg: 'Mohon isi data yang lengkap', Addresses: ret});
@@ -157,7 +164,10 @@ app.post('/submit', [
 			request(options, function (error, response, body) {
 			  if (error) throw new Error(error);
 				var cost = JSON.parse(body).rajaongkir.results[0].costs[0].cost[0].value;
-				cost = cost+500;
+				if(!in_jawa){
+					cost = cost*1.5;	
+				}
+				
 				rowsToInsert['cost'] = cost;
 				if(n_price == "default") {
 					price = seller_price[seller_id.toUpperCase()];
