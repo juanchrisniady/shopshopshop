@@ -165,7 +165,7 @@ app.post('/submit', [
 			  if (error) throw new Error(error);
 				var cost = JSON.parse(body).rajaongkir.results[0].costs[0].cost[0].value;
 				if(!in_jawa){
-					cost = cost*1.5;	
+					cost = cost*1;	
 				}
 				
 				rowsToInsert['cost'] = cost;
